@@ -80,11 +80,17 @@ cnrm-system
 knative-serving
 monitoring-system
 ```
+* After you set up Policy Controller with the above exceptions you need to annotate each of the exempted namespaces with the following annotation to actually exclude them from constraints application:
+```
+admission.gatekeeper.sh/ignore=true
+```
+If you don’t do that, system Pods and, consequently, your entire cluster, can be affected by restrictive policies.
+
 * Verify that the constraint policy templates are installed by running `kubectl get constrainttemplates`
 
 * [Set up Restricted Constraints on the cluster](8.SetupRestrictedConstraints.md)
 
-* Relax constraints for special workloads (WIP)
+* [Relax constraints for special workloads](9.ExceptionPolicies.md)
 
 ## Migrating Workloads to Target GKE Cluster
 
