@@ -3,7 +3,6 @@ kind: Pod
 metadata:
   name: anyuid-compliant-pod
 spec:
-  securityContext:
   volumes:
   - name: sec-ctx-vol
     emptyDir: {}
