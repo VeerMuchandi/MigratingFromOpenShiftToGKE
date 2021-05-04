@@ -80,7 +80,7 @@ cnrm-system
 knative-serving
 monitoring-system
 ```
-* After you set up Policy Controller with the above exceptions you need to annotate each of the exempted namespaces with the following annotation to actually exclude them from constraints application:
+* After you set up Policy Controller with the above exceptions you need to add to each of the exempted namespaces the following label to actually exclude them from constraints application:
 ```
 admission.gatekeeper.sh/ignore=true
 ```
