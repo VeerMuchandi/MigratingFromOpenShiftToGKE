@@ -1,8 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: anyuid-compliant-pod
+  name: restricted-compliant-pod
 spec:
+  securityContext:
+    runAsUser: 1000
+    fsGroup: 1100
   volumes:
   - name: sec-ctx-vol
     emptyDir: {}
